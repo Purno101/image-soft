@@ -1,0 +1,23 @@
+body{
+    min-height: 100vh;
+    min-width: 100vw;
+    background: #222;
+    overflow: hidden;
+    margin: 0;
+}
+
+#image-track{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, -50%);
+    gap: 20px;
+}
+
+#image-track > .image{
+    height: 56vmin;
+    width: 40vmin;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
