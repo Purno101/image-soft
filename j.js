@@ -1,4 +1,5 @@
 const track = document.getElementById("image-track");
+const para = document.querySelector("p");
 
 const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
 
@@ -11,7 +12,7 @@ const handleOnMove = e => {
   if(track.dataset.mouseDownAt === "0") return;
   
   const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-        maxDelta = window.innerWidth / 2;
+        maxDelta = window.innerWidth / 0.7;
   
   const percentage = (mouseDelta / maxDelta) * -100,
         nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
@@ -19,8 +20,21 @@ const handleOnMove = e => {
   
   track.dataset.percentage = nextPercentage;
   
+  if (nextPercentage === 0){
+      para.textContent = "Slide Left to see more";
+  }
+  
+  else if (nextPercentage < 0) {
+      para.textContent = "";
+  };
+    
+  if (nextPercentage === -100) {
+      para.textContent = "Slide Right to see more";
+  };  
+  
+  
   track.animate({
-    transform: `translate(${nextPercentage}%, -50%)`
+    transform: `translate(${nextPercentage}%, -45%)`
   }, { duration: 1200, fill: "forwards" });
   
   for(const image of track.getElementsByClassName("image")) {
@@ -29,8 +43,7 @@ const handleOnMove = e => {
     }, { duration: 1200, fill: "forwards" });
   }
 }
-
-
+ 
 
 window.onmousedown = e => handleOnDown(e);
 
