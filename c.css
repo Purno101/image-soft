@@ -6,12 +6,19 @@ body{
     margin: 0;
 }
 
+.about{
+    margin: 0 0 2em;
+    color: #fff;
+    text-align: center;
+    font-size: 4vmin;
+}
+
 #image-track{
     display: flex;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(0%, -50%);
+    transform: translate(0%, -45%);
     gap: 20px;
 }
 
