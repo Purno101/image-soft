@@ -20,11 +20,7 @@ const handleOnMove = e => {
   
   track.dataset.percentage = nextPercentage;
   
-  if (nextPercentage === 0){
-      para.textContent = "Slide Left to see more";
-  }
-  
-  else if (nextPercentage < 0) {
+  if (nextPercentage < 0) {
       para.textContent = "";
   };
     
