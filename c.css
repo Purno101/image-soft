@@ -11,6 +11,7 @@ body{
     color: #fff;
     text-align: center;
     font-size: 4vmin;
+    user-select: none;
 }
 
 #image-track{
